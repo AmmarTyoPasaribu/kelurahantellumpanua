@@ -466,14 +466,18 @@
           }
         });
 
-        const moreDetailsLink = document.querySelector(".mt-8 a");
+        const moreDetailsLink = document.querySelector(
+          '[data-open-monography="true"]'
+        );
         const modal = document.getElementById("monographyModal");
         const closeModalBtn = document.getElementById("closeModal");
 
-        moreDetailsLink.addEventListener("click", function (e) {
-          e.preventDefault();
-          modal.classList.remove("hidden");
-        });
+        if (moreDetailsLink && modal) {
+          moreDetailsLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            modal.classList.remove("hidden");
+          });
+        }
 
         closeModalBtn.addEventListener("click", function () {
           modal.classList.add("hidden");
@@ -720,23 +724,35 @@
             <h3 class="text-lg font-bold text-gray-800 mb-3 text-center">
               WA PELAYANAN
             </h3>
-            <img
-              alt="QR Code WhatsApp"
-              class="w-32 h-32 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
-              onclick="openModal(this.src)"
-              src="fotokelurahan/QRWA.png"
-            />
+            <a
+              href="https://wa.me/6281241343608"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buka WhatsApp Pelayanan"
+            >
+              <img
+                alt="QR Code WhatsApp"
+                class="w-32 h-32 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                src="fotokelurahan/QRWA.png"
+              />
+            </a>
           </div>
           <div class="text-center flex flex-col items-center">
             <h3 class="text-lg font-bold text-gray-800 mb-3 text-center">
               INSTAGRAM KELURAHAN
             </h3>
-            <img
-              alt="QR Code Instagram"
-              class="w-32 h-32 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
-              onclick="openModal(this.src)"
-              src="fotokelurahan/QRIG.png"
-            />
+            <a
+              href="https://www.instagram.com/kel.tellumpanua?igsh=b250a2lwdmdzaWRz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buka Instagram Kelurahan Tellumpanua"
+            >
+              <img
+                alt="QR Code Instagram"
+                class="w-32 h-32 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                src="fotokelurahan/QRIG.png"
+              />
+            </a>
           </div>
         </div>
       </div>
